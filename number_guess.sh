@@ -7,12 +7,6 @@ USERNAME_F (){
 	echo -e "\nEnter your username:" 
 	read USERNAME
 
-	if [[ ${#USERNAME} -lt 22 ]]
-	then
-		echo -e "\nUsername has to be at least of 22 characters"
-		USERNAME_F
-	fi
-
 	LOOK_USER=$($PSQL "SELECT username FROM users")
 
 	for i in $LOOK_USER
